@@ -2,7 +2,7 @@
   "name": "mern-todo",
   "version": "1.0.0",
   "description": "Practice ToDo App with Authentication built with MERN stack",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",

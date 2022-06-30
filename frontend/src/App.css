@@ -1,38 +1,422 @@
+/* Globals */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
+  height: 100%;
+  padding: 0 20%;
+  color: rgb(224, 224, 224);
+  background: rgb(9, 9, 10);
+  background: linear-gradient(0deg, rgb(9, 9, 10) 0%, rgb(14, 19, 30) 100%);
+}
+.body {
+  min-height: 80vh;
+  position: relative;
+}
+button {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 8px;
+  cursor: pointer;
+  background-color: none;
+  color: #fff;
+}
+button:hover {
+  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.236);
+}
+input {
+  padding: 0.2rem 0.8rem;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  border: solid 1px rgb(195, 195, 195);
+  border-radius: 60px;
+  background: none;
+  color: #fff;
+}
+input:focus {
+  backdrop-filter: blur(5px);
+  border: solid 1px transparent;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.236);  
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  border-bottom: solid 1px rgb(195, 195, 195);
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.credits {
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 0;
+}
+.credits a {
+  text-decoration: none;
+  color: #fff;
+}
+.credits a:hover {
+  color:rgb(111, 226, 255);
+}
+.footer .header {
+  margin-bottom: 0;
+}
+
+/* Register and Login Page */
+
+.reg-section {
+  width: 100%;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 30px;
+}
+.reg-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+.reg-form input {
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+/* Dashboard Page */
+
+.dash-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.dash-heading {
+  text-align: center;
+}
+.stats-box {
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+.dash-add {
+  height: 100%;
+  gap: 30px;
+}
+.dash-add input {
+  width: 400px;
+}
+.todo-form {
+  height: 100%;
+  width: 55%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 15px;
+  border: solid 1px rgb(129, 129, 129);
+}
+.todo-form input {
+  width: 100%;
+}
+.todos-box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+thead {
+  border-bottom: solid 2px rgb(129, 129, 129);
+}
+.todos-box tr:last-of-type {
+  border-bottom: none;
+}
+.todos-heading {
+  margin-bottom: 10px;
+}
+.todo-row {
+  display: flex;
+  align-items: center;
+  min-height: 4.5rem;
+}
+.todos-box tr {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 2px rgb(129, 129, 129);
+}
+.table-no {
+  width: 3%; 
+}
+.table-date {
+  width: 13%;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+.table-text {
+  width: 65%;
+  padding: 0 30px;
+}
+.table-status {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-status label {
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+.table-status label:hover {
+  text-decoration: underline;
+}
+.table-status input {
+  cursor: pointer;
+}
+.table-del {
+  width: 5%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.table-del button, .card-del button {
+  color: rgb(199, 58, 42);
+  padding: 0;
+}
+.table-del button:hover, .card-del button:hover {
+  background: none;
+  transform: translateY(-1px);
+  color: rgb(255, 25, 0);
+}
+.edit-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.edit-form input {
+  width: 80%;
+  max-width: 80%;
+}
+.edit-form button {
+  font-size: 16px;
+}
+.edit-form p {
+  width: 80%;
+  max-width: 80%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-height: fit-content;
+}
+.edit-form p::first-letter {
+  text-transform: capitalize;
+}
+#active-font, #comp-font {
+  margin-bottom: 30px;
+}
+#active-font {
+  color: rgb(111, 226, 255);
+}
+#comp-font {
+  color: rgb(111, 255, 166);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Pie Chart */
+
+.pie-chart {
+  width: 130px;
+}
+.chart-box {
+  height: 100%;
+  width: 40%;
+  min-width: fit-content;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 15px;
+  border: solid 1px rgb(129, 129, 129);
+}
+.chart-stats {
+  text-align: right;
+}
+.chart-stats h3, p {
+  white-space: nowrap;
+}
+.chart-stats h3 {
+  margin-bottom: 15px;
+}
+
+/* Spinner */
+
+.spinner {
+  position: absolute;
+  left:50%; 
+  top:50%; 
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+/* Todo Card (Monbile)*/
+
+.todo-card {
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(5px);
+  gap: 30px;
+}
+.todos-mobile {
+  display: none;
+}
+.card-title, .card-text, .card-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-text .edit-form {
+  width: 100%;
+  justify-content: space-between;
+}
+.card-text .edit-form input {
+  width: 80%;
+  max-width: 80%;
+  font-size: 17px;
+}
+.card-text .edit-form button {
+  padding: 3px;
+}
+.card-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.card-status label {
+  font-size: 14px;
+}
+.card-title {
+  border-bottom: solid 1px rgb(129, 129, 129);
+}
+.card-bottom {
+  border-top: solid 1px rgb(129, 129, 129);
+  padding-top: 5px;
+}
+
+/********************************************* Media Queries ***************************************************/
+
+@media screen and (max-width: 1300px) {
+  .App {
+    padding: 0 15%;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width: 1100px) {
+  .App {
+    padding: 0 10%;
   }
+}
+@media screen and (max-width: 950px) {
+  .App {
+    padding: 0 5%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .table-status label {
+    font-size: 12px;
+    width: fit-content;
+    padding: 3px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .table-text {
+    padding: 0;
+  }
+  .table-date {
+    min-width: fit-content;
+  }
+  .todos-box tr {
+    gap: 10px;
+  }
+  .stats-box {
+    flex-direction: column-reverse;
+    height: fit-content;
+    gap: 20px;
+  }
+  .todo-form, .chart-box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .todos-box {
+    background: none;
+  }
+  thead, tbody {
+    display: none;
+  }
+  .todos-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header h1 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .todos-heading {
+    font-size: 18px;
+  }
+  .pie-chart {
+    width: 110px;
+  }
+  .chart-box {
+    padding: 10px;
+    gap: 10px;
+  }
+  .card-text p {
+    font-size: 17px;
+  }
+}
+body {
+  color:rgb(0, 70, 117)
 }
