@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <Header />
       <section className="credits">
-        Coded by <a href="https://github.com/stanislavtiryoshin/mern-todo-app">Stanislav Tiryoshin</a>
+        Coded by <a href="https://github.com/stanislavtiryoshin/mern-todo-app">Stanislav Tiryoshin</a> ©️ 2022
       </section>
     </footer>
   )

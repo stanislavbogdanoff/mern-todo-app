@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { logout, reset } from '../features/auth/authSlice'
-import { LoginOutlined, LogoutOutlined, UserAddOutlined } from '@ant-design/icons'
+import { LoginOutlined, LogoutOutlined, UserAddOutlined, CheckOutlined } from '@ant-design/icons'
 
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1>TodoTracker</h1>
+      <h1> <CheckOutlined style={{color: 'rgb(111, 255, 166)'}} /> Todo<font id='comp-font'>Tracker</font></h1>
       { user ? (
         <button 
           onClick={handleLogout}

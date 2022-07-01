@@ -1,4 +1,4 @@
-/* Globals */
+/*** Globals ***/
 
 *, *::before, *::after {
   margin: 0;
@@ -44,13 +44,12 @@ input {
   color: #fff;
 }
 input:focus {
-  backdrop-filter: blur(5px);
   border: solid 1px transparent;
   outline: none;
   background-color: rgba(255, 255, 255, 0.236);  
 }
 
-/* Header */
+/*** Header ***/
 
 .header {
   display: flex;
@@ -61,7 +60,7 @@ input:focus {
   border-bottom: solid 1px rgb(195, 195, 195);
 }
 
-/* Footer */
+/*** Footer ***/
 
 .footer {
   display: flex;
@@ -75,16 +74,16 @@ input:focus {
 }
 .credits a {
   text-decoration: none;
-  color: #fff;
+  color: rgb(111, 226, 255);
 }
 .credits a:hover {
-  color:rgb(111, 226, 255);
+  text-decoration: underline;
 }
 .footer .header {
   margin-bottom: 0;
 }
 
-/* Register and Login Page */
+/*** Register and Login Page ***/
 
 .reg-section {
   width: 100%;
@@ -107,7 +106,7 @@ input:focus {
   width: 100%;
 }
 
-/* Dashboard Page */
+/*** Dashboard Page ***/
 
 .dash-section {
   display: flex;
@@ -149,7 +148,6 @@ input:focus {
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.1);  
-  backdrop-filter: blur(5px);
   border-radius: 10px;
 }
 thead {
@@ -202,8 +200,39 @@ thead {
 .table-status label:hover {
   text-decoration: underline;
 }
-.table-status input {
+/* Custom Checkbox */
+.table-status input[type='checkbox'] {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  appearance: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 20px;
+  border: solid 2px rgb(129, 129, 129);
+}
+.table-status input[type='checkbox']::after {
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 15px;
+  display: none;
+  color:rgba(255, 255, 255)
+}
+.table-status input[type='checkbox']:hover {
+  background-color: rgb(129, 129, 129);
+}
+.table-status input[type='checkbox']:checked {
+  background-color: rgb(26, 164, 65);
+  border: solid 2px transparent;
+}
+.table-status input[type='checkbox']:checked:hover {
+  border: solid 2px #fff;
+}
+.table-status input[type='checkbox']:checked::after {
+  display: block;
 }
 .table-del {
   width: 5%;
@@ -253,7 +282,7 @@ thead {
   color: rgb(111, 255, 166);
 }
 
-/* Pie Chart */
+/*** Pie Chart ***/
 
 .pie-chart {
   width: 130px;
@@ -280,7 +309,7 @@ thead {
   margin-bottom: 15px;
 }
 
-/* Spinner */
+/*** Spinner ***/
 
 .spinner {
   position: absolute;
@@ -290,7 +319,7 @@ thead {
   z-index: 100;
 }
 
-/* Todo Card (Monbile)*/
+/*** Todo Card (Monbile)***/
 
 .todo-card {
   padding: 20px 30px;
@@ -300,7 +329,6 @@ thead {
   justify-content: center;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.1);  
-  backdrop-filter: blur(5px);
   gap: 30px;
 }
 .todos-mobile {
@@ -339,6 +367,16 @@ thead {
 .card-bottom {
   border-top: solid 1px rgb(129, 129, 129);
   padding-top: 5px;
+}
+/*** Oops ***/
+
+.oops-box {
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /********************************************* Media Queries ***************************************************/

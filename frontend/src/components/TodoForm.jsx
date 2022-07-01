@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createTodo } from '../features/todo/todoSlice'
+import { EnterOutlined } from '@ant-design/icons'
 
 import '../App.css'
 
@@ -29,7 +30,7 @@ const TodoForm = () => {
         value={text} 
         onChange={handleChange}
       />
-      <button type='submit'>Submit</button>
+      <button type='submit'><EnterOutlined/> Submit</button>
     </form>
   )
 }

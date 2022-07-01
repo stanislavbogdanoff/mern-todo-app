@@ -10,6 +10,7 @@ import TodoRow from '../components/TodoRow'
 import TodoCard from '../components/TodoCard'
 import Spinner from '../components/Spinner'
 import PieChart from '../components/PieChart'
+import Oops from '../components/Oops'
 
 import '../App.css'
 
@@ -87,6 +88,9 @@ const Dashboard = () => {
                 })
               )
             }
+            {
+              notDoneNumber === 0 && <Oops />
+            }
           </tbody>
           <div className="todos-mobile">
             {
@@ -97,6 +101,9 @@ const Dashboard = () => {
                   )
                 })
               )
+            }
+            {
+              notDoneNumber === 0 && <Oops />
             }
           </div>
         </table>
@@ -115,6 +122,9 @@ const Dashboard = () => {
                 })
               )
             }
+            {
+              doneNumber === 0 && <Oops />
+            }
           </tbody>
           <div className="todos-mobile">
             {
@@ -125,6 +135,9 @@ const Dashboard = () => {
                   )
                 })
               )
+            }
+            {
+              doneNumber === 0 && <Oops />
             }
           </div>
         </table>

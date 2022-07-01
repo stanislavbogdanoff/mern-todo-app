@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTodo, updateStatus, editTodo } from '../features/todo/todoSlice'
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
+import { EditOutlined, DeleteOutlined, SaveOutlined } from '@ant-design/icons'
 
 const TodoRow = ({ num, todo }) => {
   const dispatch = useDispatch()
@@ -51,7 +51,7 @@ const TodoRow = ({ num, todo }) => {
               type='submit' 
               onClick={() => {setEditMode(!editMode); handleEdit()}}
             >
-              Update
+              <SaveOutlined />Save
             </button>
 
           </form>
@@ -74,13 +74,11 @@ const TodoRow = ({ num, todo }) => {
         <label style={ todo.status ? {color: 'rgb(111, 255, 166)'} : {color: 'rgb(111, 226, 255)'}} >
           { todo.status ? 'Done' : 'Not Done'}
         </label>
-        <form>
           <input 
             type="checkbox" 
             onChange={handleStatusUpdate} 
             checked={todo.status ? true : false}
           />
-        </form>
       </td>
 
       <td className='table-del'>

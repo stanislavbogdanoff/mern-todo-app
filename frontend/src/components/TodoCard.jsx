@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTodo, updateStatus, editTodo } from '../features/todo/todoSlice'
-import { EditOutlined, DeleteOutlined, EnterOutlined } from '@ant-design/icons'
+import { EditOutlined, DeleteOutlined, SaveOutlined } from '@ant-design/icons'
 
 const TodoRow = ({ num, todo }) => {
   const dispatch = useDispatch()
@@ -51,7 +51,7 @@ const TodoRow = ({ num, todo }) => {
               type='submit' 
               onClick={() => {setEditMode(!editMode); handleEdit()}}
             >
-              <EnterOutlined style={{fontSize: '110%'}} />
+              <SaveOutlined style={{fontSize: '110%'}} />
             </button>
 
           </form>
