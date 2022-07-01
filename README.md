@@ -38,7 +38,7 @@ Particularly, status, editablity and the stats chart were added; Frontend was he
 
 Might add deadline feature with todos being marked failed automatically if the deadline is missed.
 
-Other than the project is completely done.
+Other than that project is completely done.
 
 ## Credentials
 
